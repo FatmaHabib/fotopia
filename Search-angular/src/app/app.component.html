@@ -1,0 +1,51 @@
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                                <div class="card-body row no-gutters align-items-center">
+
+                                    <!--end of col-->
+                                    <div class="col input-container">
+                                        <input  id="search_box" [(ngModel)]="newSearch.search_string"  (ngModelChange)="search_this_string()" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search with any data about the product">
+                                        <i class="fa fa-search icon"></i>
+
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="searchs" *ngIf="searchsList && searchsList.length>0">
+      <table class="table">
+        <thead class="search_result">
+          <tr class="search_result">
+            <th class="search_result_name">Name</th>
+            <th class="search_result_image">Image</th>
+            <th class="search_result_price">Price</th>
+            <th class="search_result_brand">Brand</th>
+            <th class="search_result_cat_id">Category ID</th>
+            <th class="search_result_cat_name">Category Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="search_result" *ngFor="let search of searchsList">
+
+            <ng-container >
+              <td>{{search.name}}</td>
+              <td><a href="{{search.image}}">{{search.image}}</a></td>
+              <td>{{search.price}}</td>
+              <td>{{search.brand}}</td>
+              <td>{{search.category.id}}</td>
+              <td>{{search.category.name}}</td>
+            </ng-container>
+
+          </tr>
+        </tbody>
+      
+      </table>
+    </div>
+                                    <!--end of col-->
+                                    <!--end of col-->
+                                </div>
+
+                        </div>
+                        <!--end of col-->
+</div>
